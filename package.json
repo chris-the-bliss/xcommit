@@ -1,0 +1,34 @@
+{
+  "name": "xcommit",
+  "version": "1.0.0",
+  "description": "Analyze a conversation and produce ready to share tweets.",
+  "main": "mcp.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --esModuleInterop --resolveJsonModule --target ES2022 --module NodeNext --moduleResolution NodeNext --allowJs --outDir ./ mcp.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris-the-bliss/xcommit.git"
+  },
+  "keywords": [
+    "xcommit",
+    "indiehackerjourney",
+    "buildinpublic",
+    "failinpublic"
+  ],
+  "author": "@christhebliss",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/chris-the-bliss/xcommit/issues"
+  },
+  "homepage": "https://github.com/chris-the-bliss/xcommit#readme",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.52.0",
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "dotenv": "^16.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21"
+  }
+}
