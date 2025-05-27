@@ -26,8 +26,8 @@ Add the server to the MCP configuration in cursor (cursor settings > mcp):
 }
 ```
 
-# Cursorrule update (optional)
-Add a rule to your cursor rules:
+# rule
+Add a rule (optional) to your cursor rules:
 
 ```
 When I indicate something (finally) worked, call the MCP tool xcommit and provide it with a summary of the issue and our conversation about it, be sure to include challenges in particular. I am an indiehacker buildinginpublic and I want the people to get insights into the journey.

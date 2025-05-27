@@ -1,11 +1,12 @@
 import dotenv from "dotenv"
-dotenv.config({ path: 'local.env' })
-
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js"
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { Anthropic } from '@anthropic-ai/sdk';
 import { z } from "zod"
 import fs from 'fs/promises'
+import path from 'path'
+
+dotenv.config({ path: path.resolve(__dirname, 'local.env') })
 
 const server = new McpServer({
   name: "xcommit",
@@ -45,7 +46,8 @@ server.tool(
   },
   async (args, extra) => {
     const { summary } = args;
-    const blueprint = await fs.readFile('blueprint.txt', 'utf8');
+    const blueprintPath = path.resolve(__dirname, 'blueprint.txt');
+    const blueprint = await fs.readFile(blueprintPath, 'utf8');
     const msg = await anthropic.messages.create({
       model: 'claude-opus-4-20250514',
       max_tokens: 8192,
